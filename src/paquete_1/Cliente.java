@@ -15,6 +15,7 @@ public class Cliente {
 	static String nombreMinuscula;
 	static String apellidosMayuscula;
 	static String tipoTelefono;
+	static boolean pedidoPagado;
 
 	
 	
@@ -63,21 +64,32 @@ public class Cliente {
 
 	}
 	
+	public static void inDireccion() {
+		System.out.print("Introduce la dirección --> ");
+		direccion = sc.nextLine();
+	}
+	
+	public static void agregarPedido() {
+		
+	}
+	
 	public static void datos() {
 		System.out.println(
-				  "\nNombre        -->\t" + nombreMinuscula + "\n"
-				+ "Apellidos     -->\t" + apellidosMayuscula + "\n"
-				+ "Fecha         -->\t" + FechaDeAlta + "\n"
-				+ "Teléfono      -->\t" + telefono + "\n"
-				+ "Tipo          -->\t" + tipoTelefono);
+				  "\nNombre        --> " + nombreMinuscula + "\n"
+				+ "Apellidos     --> " + apellidosMayuscula + "\n"
+				+ "Fecha alta    --> " + FechaDeAlta + "\n"
+				+ "Teléfono      --> " + telefono + "\n"
+				+ "Tipo          --> " + tipoTelefono + "\n"
+				+ "Dirección     --> " + direccion);
 		
 	}
 	
 	public static void main(String[] args) {
 
-		inNombreYapellidos();
-		inTelefono();
-		fechaAlta();
+//		inNombreYapellidos();
+//		inTelefono();
+//		fechaAlta();
+		inDireccion();
 		datos();
 //		System.out.println(FechaDeAlta);
 		
