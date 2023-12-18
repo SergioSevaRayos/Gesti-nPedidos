@@ -14,6 +14,9 @@ public class Cliente {
 	static Scanner sc = new Scanner(System.in);
 	static String nombreMinuscula;
 	static String apellidosMayuscula;
+	static String tipoTelefono;
+
+	
 	
 	// Constructor
 	public Cliente(String nombre, String apellidos, Date FechaDeAlta, String telefono, String direccion, String historial) {
@@ -42,11 +45,19 @@ public class Cliente {
 
 		System.out.print("Introduce el teléfono --> ");
 		telefono = sc.nextLine();
+		
 		if (telefono.length() != 9) {
 			System.out.println("El teléfono es incorrecto, vuelva a intentarlo");
 			inTelefono();
 		}else {
-			System.out.println("El teléfono introducido es correcto");
+			
+			char primerCaracter = telefono.charAt(0);
+			
+			if (primerCaracter == '6' || primerCaracter == '7') {
+				tipoTelefono = "Móvil";
+			}if (primerCaracter == '8' || primerCaracter == '9') {
+				tipoTelefono = "Fijo";
+			}
 		}
 
 
@@ -54,17 +65,20 @@ public class Cliente {
 	
 	public static void datos() {
 		System.out.println(
-				  "Nombre        -->\t" + nombreMinuscula + "\n"
+				  "\nNombre        -->\t" + nombreMinuscula + "\n"
 				+ "Apellidos     -->\t" + apellidosMayuscula + "\n"
-				+ "Fecha de alta -->\t" + FechaDeAlta);
+				+ "Fecha         -->\t" + FechaDeAlta + "\n"
+				+ "Teléfono      -->\t" + telefono + "\n"
+				+ "Tipo          -->\t" + tipoTelefono);
 		
 	}
 	
 	public static void main(String[] args) {
+
+		inNombreYapellidos();
 		inTelefono();
-//		inNombreYapellidos();
-//		fechaAlta();
-//		datos();
+		fechaAlta();
+		datos();
 //		System.out.println(FechaDeAlta);
 		
 	}
