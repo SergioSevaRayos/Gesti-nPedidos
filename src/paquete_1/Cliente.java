@@ -1,34 +1,33 @@
 package paquete_1;
 
+// Librerías
 import java.util.*;
 
 public class Cliente {
 	 // Atributos
-	static String nombre;
-	static String apellidos;
-	static Date FechaDeAlta;
-	static String telefono;
-	static String direccion;
-	static String historial;
+	static String	nombre;
+	static String 	apellidos;
+	static Date 	FechaDeAlta;
+	static String 	telefono;
+	static String 	direccion;
+	static String 	historial;
+	static int 		numPedido;
 	// Variables
-	static Scanner sc = new Scanner(System.in);
-	static String nombreMinuscula;
-	static String apellidosMayuscula;
-	static String tipoTelefono;
-	static boolean pedidoPagado;
-
-	
-	
+	static Scanner 	sc = new Scanner(System.in);
+	static String 	nombreMinuscula;
+	static String 	apellidosMayuscula;
+	static String 	tipoTelefono;
+	static boolean 	pedidoPagado = false;
+	static String 	estadoPedido;
 	// Constructor
 	public Cliente(String nombre, String apellidos, Date FechaDeAlta, String telefono, String direccion, String historial) {
-		Cliente.nombre = nombre;
-		Cliente.apellidos = apellidos;
-		Cliente.FechaDeAlta = FechaDeAlta;
-		Cliente.telefono = telefono;
-		Cliente.direccion = direccion;
-		Cliente.historial = historial;
+		Cliente.nombre 		= nombre;
+		Cliente.apellidos 	= apellidos;
+		Cliente.FechaDeAlta	= FechaDeAlta;
+		Cliente.telefono 	= telefono;
+		Cliente.direccion 	= direccion;
+		Cliente.historial 	= historial;
 	}
-	
 	public static void inNombreYapellidos() {
 		System.out.print("Introduce el nombre --> ");
 		nombre = sc.nextLine();
@@ -69,10 +68,18 @@ public class Cliente {
 		direccion = sc.nextLine();
 	}
 	
+	
+	// TODO: Pendiente de enlazar los pedidos con PasarelaDePago""
 	public static void agregarPedido() {
 		
+		if (pedidoPagado = true) {
+			estadoPedido = "Pagado";
+			numPedido += 1;
+		}else {
+			estadoPedido = "Pendiente";
+			pedidoPagado = false;
+		}
 	}
-	
 	public static void datos() {
 		System.out.println(
 				  "\nNombre        --> " + nombreMinuscula + "\n"
@@ -80,18 +87,18 @@ public class Cliente {
 				+ "Fecha alta    --> " + FechaDeAlta + "\n"
 				+ "Teléfono      --> " + telefono + "\n"
 				+ "Tipo          --> " + tipoTelefono + "\n"
-				+ "Dirección     --> " + direccion);
+				+ "Dirección     --> " + direccion + "\n"
+				+ "Estado        --> " + estadoPedido + "\n"
+				+ "Num Pedido    --> " + numPedido);
 		
 	}
 	
 	public static void main(String[] args) {
-
 //		inNombreYapellidos();
 //		inTelefono();
 //		fechaAlta();
-		inDireccion();
-		datos();
-//		System.out.println(FechaDeAlta);
-		
+//		inDireccion();
+//		agregarPedido();
+//		datos();
 	}
 }
