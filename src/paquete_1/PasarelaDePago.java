@@ -6,18 +6,16 @@ import java.util.InputMismatchException;
 
 public class PasarelaDePago {
 	// Atributos
-	static int importe = 0;
-	static Date CodigoPago;
-	
+	static int		importe;
+	static String 	codigoPago = generarCodigoPago();
 	// Variables
 	static Scanner 	sc = new Scanner(System.in);
 	
 	// Constuctor
-	public PasarelaDePago(int importe, Date CodigoPago) {
+	public PasarelaDePago(int importe, String codigoPago) {
 		PasarelaDePago.importe 		= importe;
-		PasarelaDePago.CodigoPago 	= CodigoPago;
+		PasarelaDePago.codigoPago 	= codigoPago;
 	}
-	
 	public static void efectivo() {
 		while (true) {
 			try {
@@ -33,6 +31,8 @@ public class PasarelaDePago {
 		if (numCaracteres == 2) {
 			System.out.println("La cantidad de caracteres introducida es correcta" + "\n"
 					+ "PAGADO");
+			generarCodigoPago();
+			System.out.println("Código de pago --> " + codigoPago);
 		}else {
 			System.out.println("La cantidad de caracteres es incorrecta");
 			efectivo();
@@ -76,6 +76,8 @@ public class PasarelaDePago {
 				if (numCaracteres == 2) {
 					System.out.println("La cantidad de caracteres introducida es correcta" + "\n"
 							+ "PAGADO");
+					generarCodigoPago();
+					System.out.println("Código de pago --> " + codigoPago);
 				}else {
 					System.out.println("La cantidad de caracteres es incorrecta");
 					efectivo();
@@ -104,6 +106,8 @@ public class PasarelaDePago {
 				if (numCaracteres == 2) {
 					System.out.println("La cantidad de caracteres introducida es correcta" + "\n"
 							+ "PAGADO");
+					generarCodigoPago();
+					System.out.println("Código de pago --> " + codigoPago);
 				}else {
 					System.out.println("La cantidad de caracteres es incorrecta");
 					efectivo();
@@ -130,6 +134,8 @@ public class PasarelaDePago {
 				if (numCaracteres == 2) {
 					System.out.println("La cantidad de caracteres introducida es correcta" + "\n"
 							+ "PAGADO");
+					generarCodigoPago();
+					System.out.println("Código de pago --> " + codigoPago);
 				}else {
 					System.out.println("La cantidad de caracteres es incorrecta");
 					efectivo();
@@ -140,104 +146,61 @@ public class PasarelaDePago {
 		}
 	}
 	public static void cuenta() {
-		System.out.print("Introduce el número de tarjeta \nNúmero: ");
-		String numeroTarjeta = sc.nextLine();
+		System.out.print("Formato del número de cuenta \n"
+	            + "EJEMPLO --> ES-01-2345-6789-01-2345678901\n"
+	            + "Introduce el número de cuenta \n--> ");
 
-		int americanOk	= numeroTarjeta.indexOf("3");
-		int visaOk		= numeroTarjeta.indexOf("4");
-		int masterOk 	= numeroTarjeta.indexOf("5");
+	    String numeroCuenta = sc.nextLine();
+	    String formatoCuentaOk = "[A-Z]{2}-\\d{2}-\\d{4}-\\d{4}-\\d{2}-\\d{10}";
 
-		String formatoVisMasOk 		= "\\d{4} \\d{4} \\d{4} \\d{4}";
-		String formatoAmericanOk 	= "\\d{4} \\d{6} \\d{5}";
-
-
-		if (americanOk == 0) {
-			System.out.println("Tipo 	--> American Express\n"
-					+ "Número 	--> " + numeroTarjeta);
-			if (numeroTarjeta.matches(formatoVisMasOk)) {
-				System.out.println("Formato adecuado");
-				while (true) {
-					try {
-						System.out.print("Introduce el importe a pagar --> ");
-						importe = sc.nextInt();
-						break;
-					} catch (InputMismatchException e) {
-						System.err.println("Error: Por Favor, introduce un valor correcto");
-						sc.nextLine();
-					}
+	    if (numeroCuenta.matches(formatoCuentaOk)) {
+	        System.out.println("Formato ok");
+	    } else {
+	        System.out.println("Formato incorrecto");
+	    }
+		
+		if (numeroCuenta.matches(formatoCuentaOk)) {
+			while (true) {
+				try {
+					System.out.print("Introduce el importe a pagar --> ");
+					importe = sc.nextInt();
+					break;
+				} catch (InputMismatchException e) {
+					System.err.println("Error: Por Favor, introduce un valor correcto");
+					sc.nextLine();
 				}
-				int numCaracteres = String.valueOf(importe).length();
-				if (numCaracteres == 2) {
-					System.out.println("La cantidad de caracteres introducida es correcta" + "\n"
-							+ "PAGADO");
-				}else {
-					System.out.println("La cantidad de caracteres es incorrecta");
-					efectivo();
-				}
-
+			}
+			int numCaracteres = String.valueOf(importe).length();
+			if (numCaracteres == 2) {
+				System.out.println("\nLa cantidad introducida es correcta" + "\n"
+						+ "PAGADO");
+				generarCodigoPago();
+				System.out.println("Código de pago --> " + codigoPago);
 			}else {
-				System.err.println("ERROR: Formato incorrecto");
+				System.out.println("La cantidad es incorrecta");
+				efectivo();
 			}
 
-		}else if (visaOk == 0) {
-			System.out.println("Tipo 	--> Visa\n"
-					+ "Número 	--> " + numeroTarjeta);
-			if (numeroTarjeta.matches(formatoVisMasOk)) {
-				System.out.println("Formato adecuado");
-				while (true) {
-					try {
-						System.out.print("Introduce el importe a pagar --> ");
-						importe = sc.nextInt();
-						break;
-					} catch (InputMismatchException e) {
-						System.err.println("Error: Por Favor, introduce un valor correcto");
-						sc.nextLine();
-					}
-				}
-				int numCaracteres = String.valueOf(importe).length();
-				if (numCaracteres == 2) {
-					System.out.println("La cantidad de caracteres introducida es correcta" + "\n"
-							+ "PAGADO");
-				}else {
-					System.out.println("La cantidad de caracteres es incorrecta");
-					efectivo();
-				}
-			}else {
-				System.err.println("ERROR: Formato incorrecto");
-			}
-		}else if (masterOk == 0) {
-			System.out.println("Tipo 	--> Master Card\n"
-					+ "Número 	--> " + numeroTarjeta);
-			if (numeroTarjeta.matches(formatoAmericanOk)) {
-				System.out.println("Formato adecuado");
-				while (true) {
-					try {
-						System.out.print("Introduce el importe a pagar --> ");
-						importe = sc.nextInt();
-						break;
-					} catch (InputMismatchException e) {
-						System.err.println("Error: Por Favor, introduce un valor correcto");
-						sc.nextLine();
-					}
-				}
-				int numCaracteres = String.valueOf(importe).length();
-				if (numCaracteres == 2) {
-					System.out.println("La cantidad de caracteres introducida es correcta" + "\n"
-							+ "PAGADO");
-				}else {
-					System.out.println("La cantidad de caracteres es incorrecta");
-					efectivo();
-				}
-			}else {
-				System.err.println("ERROR: Formato incorrecto");
-			}
+		}else {
+			System.err.println("ERROR: Formato incorrecto");
 		}
 	}
+	public static String generarCodigoPago() {
+        // Obtener la fecha actual
+        Date fechaActual = new Date();
 
+        // Obtener el tiempo en milisegundos desde la época
+        long tiempoMilisegundos = fechaActual.getTime();
 
+        // Convertir el tiempo en milisegundos a una cadena
+        String codigoPago = Long.toString(tiempoMilisegundos);
+
+        return codigoPago;
+    }
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		tarjeta();
+//		efectivo();
+//		tarjeta();
+		cuenta();
 	}
 
 }

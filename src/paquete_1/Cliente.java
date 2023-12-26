@@ -36,11 +36,9 @@ public class Cliente {
 		apellidos = sc.nextLine();
 		apellidosMayuscula = apellidos.toUpperCase();
 	}
-	
 	public static void fechaAlta() {
 		FechaDeAlta = new Date();
 	}
-
 	public static void inTelefono() {
 
 		System.out.print("Introduce el teléfono --> ");
@@ -62,14 +60,10 @@ public class Cliente {
 
 
 	}
-	
 	public static void inDireccion() {
 		System.out.print("Introduce la dirección --> ");
 		direccion = sc.nextLine();
 	}
-	
-	
-	// TODO: Pendiente de enlazar los pedidos con PasarelaDePago""
 	public static void agregarPedido() {
 		
 		if (pedidoPagado = true) {
@@ -92,7 +86,6 @@ public class Cliente {
 				+ "Num Pedido    --> " + numPedido);
 		
 	}
-	
 	public static void main(String[] args) {
 //		inNombreYapellidos();
 //		inTelefono();
