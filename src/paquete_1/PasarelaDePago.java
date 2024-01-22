@@ -183,6 +183,7 @@ public class PasarelaDePago {
 
 		}else {
 			System.err.println("ERROR: Formato incorrecto");
+			cuenta();
 		}
 	}
 	public static String generarCodigoPago() {
@@ -200,7 +201,7 @@ public class PasarelaDePago {
 	public static void main(String[] args) {
 //		efectivo();
 //		tarjeta();
-		cuenta();
+//		cuenta();
 	}
 
 }

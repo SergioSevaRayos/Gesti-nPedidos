@@ -19,6 +19,8 @@ public class Cliente {
 	static String 	tipoTelefono;
 	static boolean 	pedidoPagado = false;
 	static String 	estadoPedido;
+	public String inNombreYapellidos;
+
 	// Constructor
 	public Cliente(String nombre, String apellidos, Date FechaDeAlta, String telefono, String direccion, String historial) {
 		Cliente.nombre 		= nombre;
@@ -86,12 +88,16 @@ public class Cliente {
 				+ "Num Pedido    --> " + numPedido);
 		
 	}
-	public static void main(String[] args) {
-//		inNombreYapellidos();
-//		inTelefono();
-//		fechaAlta();
-//		inDireccion();
-//		agregarPedido();
-//		datos();
+	public static void main() {
+		inNombreYapellidos();
+		inTelefono();
+		fechaAlta();
+		inDireccion();
+		agregarPedido();
+		datos();
+
+		
+		
+
 	}
 }
