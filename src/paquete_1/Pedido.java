@@ -73,51 +73,14 @@ public class Pedido {
         return producto2;
     }
     
-    
-    
-    
+    public Producto eliminarProducto(Producto producto) {
+        if (producto != null) {
+            producto = null;
+            return producto;
+        } else {
+            return null;
+        }
+    }
 
-    
-    
-    
-    
-    
-    
-    public static void main(String[] args) {
-
-	}
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
 }

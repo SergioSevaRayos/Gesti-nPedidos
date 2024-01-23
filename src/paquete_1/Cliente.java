@@ -17,8 +17,6 @@ public class Cliente {
 	static String 	nombreMinuscula;
 	static String 	apellidosMayuscula;
 	static String 	tipoTelefono;
-	static boolean 	pedidoPagado = false;
-	static String 	estadoPedido;
 	public String inNombreYapellidos;
 
 	// Constructor
@@ -67,16 +65,9 @@ public class Cliente {
 		direccion = sc.nextLine();
 	}
 	public static void agregarPedido() {
-		
-		if (pedidoPagado = true) {
-			estadoPedido = "Pagado";
 			numPedido += 1;
-		}else {
-			estadoPedido = "Pendiente";
-			pedidoPagado = false;
-		}
 	}
-	public static void datos() {
+	public void datos() {
 		System.out.println(
 				  "\nNombre        --> " + nombreMinuscula + "\n"
 				+ "Apellidos     --> " + apellidosMayuscula + "\n"
@@ -84,17 +75,16 @@ public class Cliente {
 				+ "Teléfono      --> " + telefono + "\n"
 				+ "Tipo          --> " + tipoTelefono + "\n"
 				+ "Dirección     --> " + direccion + "\n"
-				+ "Estado        --> " + estadoPedido + "\n"
 				+ "Num Pedido    --> " + numPedido);
 		
 	}
-	public static void main() {
+	public void main() {
 		inNombreYapellidos();
 		inTelefono();
 		fechaAlta();
 		inDireccion();
-		agregarPedido();
-		datos();
+//		agregarPedido();
+
 
 		
 		
