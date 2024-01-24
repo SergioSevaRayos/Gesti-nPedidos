@@ -2,20 +2,38 @@ package paquete_1;
 
 public class Producto {
 	// Atributos
-	static String nombre;
-	static int precio;
-	static int cantidad;
-	public static Producto producto1;
-	public static Producto producto2;
-	public static Producto producto3;
+	private String 	nombre;
+	private int 	precio;
+	private int 	cantidad;
+
 	// Contructor
 	Producto(String nombre, int precio, int cantidad){
-		Producto.nombre = nombre;
-		Producto.precio = precio;
-		Producto.cantidad = cantidad;
+		this.nombre 	= nombre;
+		this.precio 	= precio;
+		this.cantidad 	= cantidad;
 	}
-
-	public static void main(String[] args) {
-
-	}
+	
+	// Métodos seters y geters
+	
+	// Nombre
+	public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    // Precio
+    public int getPrecio() {
+        return precio;
+    }
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+    // Cantidad
+    public int getCantiadad() {
+        return cantidad;
+    }
+    public void setCantiadad(int cantidad) {
+        this.cantidad = cantidad;
+    }
 }

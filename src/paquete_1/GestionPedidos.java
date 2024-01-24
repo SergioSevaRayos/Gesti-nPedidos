@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class GestionPedidos {
 	static Scanner sc = new Scanner(System.in);
-	static Cliente cliente1 = new Cliente(null, null, null, null, null, null);
+	
 	static Cliente cliente2 = new Cliente(null, null, null, null, null, null);
 	
 	// TODO como crear clientes
@@ -13,18 +13,28 @@ public class GestionPedidos {
 				+ "1. Crear clientes\n"
 				+ "2. Crear productos\n"
 				+ "3. Ver clientes");
-		 String op = sc.nextLine();
+		String op = sc.nextLine();
 		switch (op) {
 		case "1":
-
-			
+			Cliente cliente1 = new Cliente(null, null, null, null, null, null);
+			Cliente cliente2 = new Cliente(null, null, null, null, null, null);
+			Cliente cliente3 = new Cliente(null, null, null, null, null, null);
 			System.out.println("CREAR CLIENTES");
-			cliente1.main();
-			menu();
-			if (cliente1 != null) {
-				cliente2.main();
-				menu();
+			cliente1.inNombreYapellidos();
+			if (cliente1.getNombre() != null) {
+				System.out.println("El cliente 1 esta insertado\n"
+						+ "Inserta el cliente 2");
+				cliente2.inNombreYapellidos();
 			}
+			
+			if (cliente1.getNombre() != null && cliente2.getNombre() != null) {
+				System.out.println("El cliente 1 y 2 estan insertados\n"
+						+ "Inserta el cliente 3");
+				cliente3.inNombreYapellidos();
+			}
+			System.out.println("Cliente 1: " + cliente1.getNombre());
+			System.out.println("Cliente 2: " + cliente2.getNombre());
+			System.out.println("Cliente 3: " + cliente3.getNombre());
 			break;
 		case "2":
 			System.out.println("CREAR PRODUCTOS");
@@ -32,8 +42,8 @@ public class GestionPedidos {
 			break;
 		case "3":
 			System.out.println("VER CLIENTES");
-			cliente1.datos();
-			cliente2.datos();
+//			cliente1.datos();
+//			cliente2.datos();
 			menu();
 			break;
 		default:
@@ -41,7 +51,6 @@ public class GestionPedidos {
 			menu();
 			break;
 		}
-		
 	}
 	
 
@@ -62,3 +71,4 @@ public class GestionPedidos {
 	}
 
 }
+
