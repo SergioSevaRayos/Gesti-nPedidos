@@ -9,6 +9,9 @@ public class GestionPedidos {
 	
 	// TODO como crear clientes
 	public static void menu() {
+		Cliente cliente1 = new Cliente(null, null, null, null, null, null);
+		Cliente cliente2 = new Cliente(null, null, null, null, null, null);
+		Cliente cliente3 = new Cliente(null, null, null, null, null, null);
 		System.out.println("MENÚ INICIAL\n"
 				+ "1. Crear clientes\n"
 				+ "2. Crear productos\n"
@@ -16,9 +19,7 @@ public class GestionPedidos {
 		String op = sc.nextLine();
 		switch (op) {
 		case "1":
-			Cliente cliente1 = new Cliente(null, null, null, null, null, null);
-			Cliente cliente2 = new Cliente(null, null, null, null, null, null);
-			Cliente cliente3 = new Cliente(null, null, null, null, null, null);
+			
 			System.out.println("CREAR CLIENTES");
 			cliente1.inNombreYapellidos();
 			if (cliente1.getNombre() != null) {

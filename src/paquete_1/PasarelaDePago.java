@@ -42,9 +42,9 @@ public class PasarelaDePago {
 	public static void tarjeta() {
 		System.out.println("Forma de pago mediante tarjeta seleccionado"
 				+ "\nFormatos de numeración de las tarjetas\n"
-				+ "xxxx xxxx xxxx xxxx --> Visa\n"
-				+ "xxxx xxxx xxxx xxxx --> MasterCard\n"
-				+ "xxxx xxxxxx xxxxx   --> American Expres\n");
+				+ "4xxx xxxx xxxx xxxx --> Visa\n"
+				+ "5xxx xxxx xxxx xxxx --> MasterCard\n"
+				+ "3xxx xxxxxx xxxxx   --> American Expres\n");
 
 		System.out.print("Introduce el número de tarjeta \nNúmero: ");
 		String numeroTarjeta = sc.nextLine();
@@ -85,6 +85,7 @@ public class PasarelaDePago {
 
 			}else {
 				System.err.println("ERROR: Formato incorrecto");
+				tarjeta();
 			}
 
 		}else if (visaOk == 0) {
@@ -114,6 +115,7 @@ public class PasarelaDePago {
 				}
 			}else {
 				System.err.println("ERROR: Formato incorrecto");
+				tarjeta();
 			}
 		}else if (masterOk == 0) {
 			System.out.println("Tipo 	--> Master Card\n"
@@ -142,7 +144,11 @@ public class PasarelaDePago {
 				}
 			}else {
 				System.err.println("ERROR: Formato incorrecto");
+				tarjeta();
 			}
+		}else if (visaOk != 0 && americanOk != 0 && masterOk != 0) {
+			System.err.println("ERROR: Tarjeta no reconocida");
+			tarjeta();
 		}
 	}
 	public static void cuenta() {
