@@ -31,18 +31,19 @@ public class Pedido {
 
 	// Métodos
     // Cliente
-    public Cliente getCliente() {
-        return cliente;
-    }
     public void agregarCliente(Cliente cliente) {
         this.cliente = cliente;
     }
+    public Cliente getCliente() {
+        return cliente;
+    }
+    
     // Producto 1
     public Producto getProducto1() {
         return producto1;
     }
     public void agregarProducto1(Producto producto1) {
-        this.producto1 = producto1;
+    	this.producto1 = producto1;
     }
     // Producto 2
     public Producto getProducto2() {
@@ -80,6 +81,8 @@ public class Pedido {
 			PasarelaDePago.cuenta();
 			break;
 		default:
+			System.out.println("Opción incorrecta, vuelve a intentarlo");
+			pagar(TipoPago);
 			break;
 		}
 	}
@@ -94,11 +97,13 @@ public class Pedido {
 			System.out.println("Pago pendiente");
 		}
 	}
-    
-    
+
     public static void main(String[] args) {
-    	pagar(null);
+//    	pagar(TipoPago);
 	}
+
+
+	
     
     
     

@@ -2,16 +2,25 @@ package paquete_1;
 
 import java.util.Scanner;
 
+
 public class GestionPedidos {
 	static Scanner sc = new Scanner(System.in);
 	
 	static Cliente cliente2 = new Cliente(null, null, null, null, null, null);
+	static Pedido pedido = new Pedido(null, null, null, null, null, 0, null);
+	
 	
 	// TODO como crear clientes
 	public static void menu() {
 		Cliente cliente1 = new Cliente(null, null, null, null, null, null);
 		Cliente cliente2 = new Cliente(null, null, null, null, null, null);
 		Cliente cliente3 = new Cliente(null, null, null, null, null, null);
+		Producto producto1 = new Producto(null, 0, 0);
+		Producto producto2 = new Producto(null, 0, 0);
+		Producto producto3 = new Producto(null, 0, 0);
+		Producto producto4 = new Producto(null, 0, 0);
+		Producto producto5 = new Producto(null, 0, 0);
+		
 		System.out.println("MENÚ INICIAL\n"
 				+ "1. Crear clientes\n"
 				+ "2. Crear productos\n"
@@ -38,8 +47,45 @@ public class GestionPedidos {
 			System.out.println("Cliente 3: " + cliente3.getNombre());
 			break;
 		case "2":
-			System.out.println("CREAR PRODUCTOS");
-			menu();
+			System.out.println("CREAR PRODUCTOS\n"
+					+ "Lista de productos\n"
+					+ "1. Producto 1\n"
+					+ "2. Producto 2\n"
+					+ "3. Producto 3\n"
+					+ "4. Producto 4\n"
+					+ "5. Producto 5");
+			op = sc.nextLine();
+			switch (op) {
+			case "1":
+				System.out.println("Introduce el producto1");
+				op = sc.nextLine();
+				producto1.setNombre(op);
+				System.out.println("Nombre --> " + producto1.getNombre());
+				break;
+			case "2":
+				
+				break;
+
+			case "3":
+				
+				break;
+			case "4":
+				
+				break;
+
+			case "5":
+				
+				break;
+
+			default:
+				break;
+			}
+			
+//			pedido.agregarCliente(cliente1);
+//			pedido.agregarProducto1(producto1);
+
+//			Pedido.main(null);
+
 			break;
 		case "3":
 			System.out.println("VER CLIENTES");
