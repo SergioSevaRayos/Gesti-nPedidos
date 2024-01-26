@@ -18,6 +18,10 @@ public class Cliente {
 	static String 	apellidosMayuscula;
 	static String 	tipoTelefono;
 	public String 	inNombreYapellidos;
+	
+	static Cliente cliente1 = new Cliente(null, null, null, null, null, null);
+	static Cliente cliente2 = new Cliente(null, null, null, null, null, null);
+	static Cliente cliente3 = new Cliente(null, null, null, null, null, null);
 
 	// Constructor
 	public Cliente(String nombre, String apellidos, Date FechaDeAlta, String telefono, String direccion, String historial) {
@@ -33,28 +37,33 @@ public class Cliente {
 	public void inNombreYapellidos() {
 		System.out.print("Introduce el nombre --> ");
 		this.nombre = sc.nextLine();
-		nombreMinuscula = this.nombre.toLowerCase();
+		nombreMinuscula = this.nombre;
 		System.out.print("Introduce los apellidos --> ");
 		this.apellidos = sc.nextLine();
-		apellidosMayuscula = this.apellidos.toUpperCase();
+		apellidosMayuscula = this.apellidos;
 	}
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
     public String getNombre() {
         return nombre;
     }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public String toString() {
+        return "Cliente: " + nombre;
     }
 	// ------------------------------------------------- Fin Nombre
 	// ------------------------------------------------- Inicio Fecha
 	public void fechaAlta() {
 		this.FechaDeAlta = new Date();
 	}
-	public Date getFechaAlta() {
-        return FechaDeAlta;
-    }
     public void setFechaAlta(Date FechaDeAlta) {
         this.FechaDeAlta = FechaDeAlta;
     }
+    public String getFechaAlta() {
+        return "Fecha de alta: " +  FechaDeAlta;
+    }
+
 	// ------------------------------------------------- Fin Fecha
 	// ------------------------------------------------- Inicio Teléfono
 	public void inTelefono() {
@@ -74,11 +83,11 @@ public class Cliente {
 			}
 		}
 	}
-	public String getTelefono() {
-        return telefono;
-    }
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+    public String getTelefono() {
+        return "Número de teléfono: " + telefono;
     }
     // ------------------------------------------------- Fin Teléfono
     // ------------------------------------------------- Inicio Dirección
@@ -86,46 +95,34 @@ public class Cliente {
 		System.out.print("Introduce la dirección --> ");
 		this.direccion = sc.nextLine();
 	}
-	public String getDireccion() {
-        return direccion;
-    }
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+    public String getDireccion() {
+        return "Dirección: " + direccion;
     }
     // ------------------------------------------------- Fin Dirección
  // ------------------------------------------------- Inicio Número pedido
     public void agregarPedido() {
 			this.numPedido += 1;
 	}
-	public int getPedido() {
-        return numPedido;
-    }
     public void setPedido(int numPedido) {
         this.numPedido = numPedido;
+    }
+    public String getPedido() {
+        return "Número de pedido: " + numPedido;
     }
     // ------------------------------------------------- Fin Número pedido
     
 	public void datos() {
 		System.out.println(
-				  "\nNombre        --> " + nombreMinuscula + "\n"
-				+ "Apellidos     --> " + apellidosMayuscula + "\n"
+				  "\nNombre        --> " + nombre.toLowerCase() + "\n"
+				+ "Apellidos     --> " + apellidos.toUpperCase() + "\n"
 				+ "Fecha alta    --> " + FechaDeAlta + "\n"
 				+ "Teléfono      --> " + telefono + "\n"
 				+ "Tipo          --> " + tipoTelefono + "\n"
 				+ "Dirección     --> " + direccion + "\n"
 				+ "Num Pedido    --> " + numPedido);
 		
-	}
-	public void main() {
-		inNombreYapellidos();
-		inTelefono();
-		fechaAlta();
-		inDireccion();
-//		agregarPedido();
-
-
-		
-		
-
 	}
 }
