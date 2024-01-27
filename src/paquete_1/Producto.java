@@ -61,7 +61,31 @@ public class Producto {
     public int getCantiadad() {
         return cantidad;
     }
-    
+    public void eliminarPr1() {
+    	producto1.nombre = null;
+    	producto1.precio = 0;
+    	producto1.cantidad = 0;
+	}
+    public void eliminarPr2() {
+    	producto2.nombre = null;
+    	producto2.precio = 0;
+    	producto2.cantidad = 0;
+	}
+    public void eliminarPr3() {
+    	producto3.nombre = null;
+    	producto3.precio = 0;
+    	producto3.cantidad = 0;
+	}
+    public void eliminarPr4() {
+    	producto4.nombre = null;
+    	producto4.precio = 0;
+    	producto4.cantidad = 0;
+	}
+    public void eliminarPr5() {
+    	producto5.nombre = null;
+    	producto5.precio = 0;
+    	producto5.cantidad = 0;
+	}
     public void datos() {
 		System.out.println(
 				  "\nNombre  --> " + nombre + "\n"

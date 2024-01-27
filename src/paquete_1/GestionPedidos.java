@@ -12,7 +12,9 @@ public class GestionPedidos {
 		System.out.println("MENÚ INICIAL\n"
 				+ "1. Crear clientes\n"
 				+ "2. Crear productos\n"
-				+ "3. Ver datos");
+				+ "3. Eliminar productos\n"
+				+ "4. Ver datos\n"
+				+ "0. Salir");
 		String op = sc.nextLine();
 		switch (op) {
 		case "1":
@@ -38,9 +40,6 @@ public class GestionPedidos {
 					}
 				}
 			}
-			Cliente.cliente1.datos();
-			Cliente.cliente2.datos();
-			Cliente.cliente3.datos();
 			menu();
 			break;
 		case "2":
@@ -51,64 +50,96 @@ public class GestionPedidos {
 				Producto.producto1.setPrecio();
 				Producto.producto1.setCantiadad();
 				System.out.println("Producto 1 insertado");
-				if (Producto.producto2.getNombre() == null) {
-					System.out.println("Producto 2");
-					Producto.producto2.inNombreProducto();
-					Producto.producto2.setPrecio();
-					Producto.producto2.setCantiadad();
-					System.out.println("Producto 2 insertado");
-					if (Producto.producto3.getNombre() == null) {
-						System.out.println("Producto 3");
-						Producto.producto3.inNombreProducto();
-						Producto.producto3.setPrecio();
-						Producto.producto3.setCantiadad();
-						System.out.println("Producto 4 insertado");
-						if (Producto.producto4.getNombre() == null) {
-							System.out.println("Producto 4");
-							Producto.producto4.inNombreProducto();
-							Producto.producto4.setPrecio();
-							Producto.producto4.setCantiadad();
-							System.out.println("Producto 4 insertado");
-							if (Producto.producto5.getNombre() == null) {
-								System.out.println("Producto 5");
-								Producto.producto5.inNombreProducto();
-								Producto.producto5.setPrecio();
-								Producto.producto5.setCantiadad();
-								System.out.println("Producto 5 insertado");
-							}
-						}
-					}
-				}	
 			}
+			if (Producto.producto2.getNombre() == null) {
+				System.out.println("Producto 2");
+				Producto.producto2.inNombreProducto();
+				Producto.producto2.setPrecio();
+				Producto.producto2.setCantiadad();
+				System.out.println("Producto 2 insertado");
+			}
+			if (Producto.producto3.getNombre() == null) {
+				System.out.println("Producto 3");
+				Producto.producto3.inNombreProducto();
+				Producto.producto3.setPrecio();
+				Producto.producto3.setCantiadad();
+				System.out.println("Producto 3 insertado");
+			}
+			if (Producto.producto4.getNombre() == null) {
+				System.out.println("Producto 4");
+				Producto.producto4.inNombreProducto();
+				Producto.producto4.setPrecio();
+				Producto.producto4.setCantiadad();
+				System.out.println("Producto 2 insertado");
+			}
+			if (Producto.producto5.getNombre() == null) {
+				System.out.println("Producto 5");
+				Producto.producto5.inNombreProducto();
+				Producto.producto5.setPrecio();
+				Producto.producto5.setCantiadad();
+				System.out.println("Producto 5 insertado");
+			}
+			menu();
+			break;
+		case "3":
+			System.out.println("Selecciona el producto que deseas eliminar");
+			Producto.producto1.datos();
+			Producto.producto2.datos();
+			Producto.producto3.datos();
+			Producto.producto4.datos();
+			Producto.producto5.datos();
+			System.out.println(""
+					+ "1. " + Producto.producto1.getNombre() + "\n"
+					+ "2. " + Producto.producto2.getNombre() + "\n"
+					+ "3. " + Producto.producto3.getNombre() + "\n"
+					+ "4. " + Producto.producto4.getNombre() + "\n"
+					+ "5. " + Producto.producto5.getNombre() + "\n");
+			op = sc.nextLine();
+			switch (op) {
+			case "1":
+				System.out.println("Eliminando el producto");
+				Producto.producto1.eliminarPr1();
+				System.out.println("Producto eliminado");
+				break;
+			case "2":
+				System.out.println("Eliminando el producto");
+				Producto.producto2.eliminarPr2();
+				System.out.println("Producto eliminado");
+				break;
+			case "3":
+				System.out.println("Eliminando el producto");
+				Producto.producto3.eliminarPr3();
+				System.out.println("Producto eliminado");
+				break;
+			case "4":
+				System.out.println("Eliminando el producto");
+				Producto.producto4.eliminarPr4();
+				System.out.println("Producto eliminado");
+				break;
+			case "5":
+				System.out.println("Eliminando el producto");
+				Producto.producto5.eliminarPr5();
+				System.out.println("Producto eliminado");
+				break;
+			default:
+				break;
+			}
+			menu();
+			break;
+		case "4":
+			System.out.println("Datos introducidos");
+			Cliente.cliente1.datos();
+			Cliente.cliente2.datos();
+			Cliente.cliente3.datos();
 			Producto.producto1.datos();
 			Producto.producto2.datos();
 			Producto.producto3.datos();
 			Producto.producto4.datos();
 			Producto.producto5.datos();
 			menu();
-
 			break;
-		case "3":
-			System.out.println("VER DATOS");
-			Cliente.cliente1.datos();
-			Cliente.cliente2.datos();
-			Cliente. cliente3.datos();
-			Producto.producto1.datos();
-			Producto.producto2.datos();
-			System.out.println("Agregando datos al pedido");
-			Pedido.listaPedido.agregarProducto1(Producto.producto1);
-			Producto.producto1.datos();
-			Producto.producto1.datos();
-//			System.out.println(Pedido.listaPedido.getCliente());
-//			Pedido.listaPedido.agregarCliente(Cliente.cliente1);
-//			Pedido.listaPedido.agregarProducto1(Producto.producto1);
-//
-//
-//			Pedido.listaPedido.agregarCliente(Cliente.cliente1);
-//			System.out.println(Pedido.listaPedido.getCliente());
-//			System.out.println(Cliente.cliente1.getFechaAlta());
-//			System.out.println(Cliente.cliente1.getPedido());
-			menu();
+		case "0":
+			System.out.println("Saliendo....");
 			break;
 		default:
 			System.out.println("Selección incorrecta");
