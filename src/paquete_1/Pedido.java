@@ -59,13 +59,8 @@ public class Pedido {
         this.producto3 = producto3;
     }
     
-    public static void pagar(String TipoPago) {
-    	
-    	System.out.println("Selección del tipo de pago\n"
-				+ "1. Efectivo\n"
-				+ "2. Tarjeta\n"
-				+ "3. Cuenta");
-		TipoPago = sc.nextLine();
+    public void pagar(String TipoPago) {
+
 		switch (TipoPago) {
 		case "1":
 			PasarelaDePago.efectivo();

@@ -67,9 +67,9 @@ public class Cliente {
 	// ------------------------------------------------- Fin Fecha
 	// ------------------------------------------------- Inicio Teléfono
 	public void inTelefono() {
+		
 		System.out.print("Introduce el teléfono --> ");
 		this.telefono = sc.nextLine();
-		
 		if (this.telefono.length() != 9) {
 			System.out.println("El teléfono es incorrecto, vuelva a intentarlo");
 			inTelefono();
@@ -82,12 +82,13 @@ public class Cliente {
 				tipoTelefono = "Fijo";
 			}
 		}
+
 	}
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
     public String getTelefono() {
-        return "Número de teléfono: " + telefono;
+        return telefono;
     }
     // ------------------------------------------------- Fin Teléfono
     // ------------------------------------------------- Inicio Dirección

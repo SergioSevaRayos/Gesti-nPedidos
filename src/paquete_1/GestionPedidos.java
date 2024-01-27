@@ -1,5 +1,6 @@
 package paquete_1;
 
+
 import java.util.Scanner;
 
 
@@ -8,39 +9,52 @@ public class GestionPedidos {
 	
 	// TODO: tengo que terminar de crear el menú e ir implantado todas las partes de la
 	// práctica
-	public static void menu() {
+	public static void menuInicial() {
 		System.out.println("MENÚ INICIAL\n"
 				+ "1. Crear clientes\n"
 				+ "2. Crear productos\n"
 				+ "3. Eliminar productos\n"
 				+ "4. Ver datos\n"
+				+ "5. Pagar\n"
+				+ "6. Menú pedidos\n"
 				+ "0. Salir");
 		String op = sc.nextLine();
 		switch (op) {
 		case "1":
 			System.out.println("CREAR CLIENTES");
 			if (Cliente.cliente1.getNombre() == null) {
-				System.out.println("Cliente 1");
-				Cliente.cliente1.inNombreYapellidos();
-				Cliente.cliente1.fechaAlta();
-				Cliente.cliente1.inTelefono();
-				Cliente.cliente1.inDireccion();
-				if (Cliente.cliente2.getNombre() == null) {
-					System.out.println("Cliente 2");
-					Cliente.cliente2.inNombreYapellidos();
-					Cliente.cliente2.fechaAlta();
-					Cliente.cliente2.inTelefono();
-					Cliente.cliente2.inDireccion();
-					if (Cliente.cliente3.getNombre() == null) {
-						System.out.println("Cliente 3");
-						Cliente.cliente3.inNombreYapellidos();
-						Cliente.cliente3.fechaAlta();
-						Cliente.cliente3.inTelefono();
-						Cliente.cliente3.inDireccion();
-					}
-				}
+			    System.out.println("Cliente 1");
+			    Cliente.cliente1.inNombreYapellidos();
+			    Cliente.cliente1.fechaAlta();
+			    Cliente.cliente1.inTelefono();
+			    Cliente.cliente1.inDireccion();
+			    if (Cliente.cliente2.getNombre() == null) {
+			        System.out.println("Cliente 2");
+			        Cliente.cliente2.inNombreYapellidos();
+			        Cliente.cliente2.fechaAlta();
+			        Cliente.cliente2.inTelefono();
+			        while (Cliente.cliente1.getTelefono().equals(Cliente.cliente2.getTelefono())) {
+			            System.out.println("Teléfono repetido");
+			            Cliente.cliente2.inTelefono();
+			        }
+			        Cliente.cliente2.inDireccion();
+			        if (Cliente.cliente3.getNombre() == null) {
+			            System.out.println("Cliente 3");
+			            Cliente.cliente3.inNombreYapellidos();
+			            Cliente.cliente3.fechaAlta();
+			            Cliente.cliente3.inTelefono();
+			            while (Cliente.cliente2.getTelefono().equals(Cliente.cliente3.getTelefono()) ||
+			                   Cliente.cliente1.getTelefono().equals(Cliente.cliente3.getTelefono())) {
+			                System.out.println("Teléfono repetido");
+			                Cliente.cliente3.inTelefono();
+			            }
+			            Cliente.cliente3.inDireccion();
+			        }
+			    }
+			} else {
+			    System.err.println("Los clientes ya se han introducido");
 			}
-			menu();
+			menuInicial();
 			break;
 		case "2":
 			System.out.println("CREAR PRODUCTOS");
@@ -79,7 +93,7 @@ public class GestionPedidos {
 				Producto.producto5.setCantiadad();
 				System.out.println("Producto 5 insertado");
 			}
-			menu();
+			menuInicial();
 			break;
 		case "3":
 			System.out.println("Selecciona el producto que deseas eliminar");
@@ -124,7 +138,7 @@ public class GestionPedidos {
 			default:
 				break;
 			}
-			menu();
+			menuInicial();
 			break;
 		case "4":
 			System.out.println("Datos introducidos");
@@ -136,23 +150,87 @@ public class GestionPedidos {
 			Producto.producto3.datos();
 			Producto.producto4.datos();
 			Producto.producto5.datos();
-			menu();
+			menuInicial();
+			break;
+		case "5": 
+			System.out.println("Gestión del pago");
+			System.out.print("Selección del tipo de pago (Gest)\n"
+					+ "1. Efectivo\n"
+					+ "2. Tarjeta\n"
+					+ "3. Cuenta\n"
+					+ "Tipo de pago --> ");
+			String op1 = sc.nextLine();
+			System.out.println("");
+			Pedido.listaPedido.pagar(op1);
+			menuInicial();
 			break;
 		case "0":
 			System.out.println("Saliendo....");
 			break;
+		case "6":
+			menuPedidos();
+			break;
 		default:
 			System.out.println("Selección incorrecta");
-			menu();
+			menuInicial();
 			break;
 		}
 	}
-	
-
-	public static void main(String[] args) {
-
-		menu();
+	public static void menuPedidos() {
+		System.out.print("MENÚ PEDIDOS\n"
+				+ "1. Introduce el número de teléfono --> ");
+		String scTelefono = sc.nextLine();		
+		try {
+			if (Cliente.cliente1.getTelefono().equals(scTelefono)) {
+				System.out.println("Cliente: " + Cliente.cliente1.getNombre());
+			}
+			if (Cliente.cliente2.getTelefono().equals(scTelefono)) {
+				System.out.println("Cliente: " + Cliente.cliente2.getNombre());
+			}
+			if (Cliente.cliente3.getTelefono().equals(scTelefono)) {
+				System.out.println("Cliente: " + Cliente.cliente3.getNombre());
+			}
+			menuInicial();
+		} catch (Exception e) {
+			System.err.println("El cliente no existe");
+			menuInicial();
+			sc.nextLine();
+		}
 	}
 
+	public static void main(String[] args) {
+		menuInicial();
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
