@@ -1,12 +1,10 @@
 package paquete_1;
 
-
 import java.util.Scanner;
-
 
 public class GestionPedidos {
 	static Scanner sc = new Scanner(System.in);
-	
+
 	// TODO: tengo que terminar de crear el menú e ir implantado todas las partes de la
 	// práctica
 	public static void menuInicial() {
@@ -23,36 +21,36 @@ public class GestionPedidos {
 		case "1":
 			System.out.println("CREAR CLIENTES");
 			if (Cliente.cliente1.getNombre() == null) {
-			    System.out.println("Cliente 1");
-			    Cliente.cliente1.inNombreYapellidos();
-			    Cliente.cliente1.fechaAlta();
-			    Cliente.cliente1.inTelefono();
-			    Cliente.cliente1.inDireccion();
-			    if (Cliente.cliente2.getNombre() == null) {
-			        System.out.println("Cliente 2");
-			        Cliente.cliente2.inNombreYapellidos();
-			        Cliente.cliente2.fechaAlta();
-			        Cliente.cliente2.inTelefono();
-			        while (Cliente.cliente1.getTelefono().equals(Cliente.cliente2.getTelefono())) {
-			            System.out.println("Teléfono repetido");
-			            Cliente.cliente2.inTelefono();
-			        }
-			        Cliente.cliente2.inDireccion();
-			        if (Cliente.cliente3.getNombre() == null) {
-			            System.out.println("Cliente 3");
-			            Cliente.cliente3.inNombreYapellidos();
-			            Cliente.cliente3.fechaAlta();
-			            Cliente.cliente3.inTelefono();
-			            while (Cliente.cliente2.getTelefono().equals(Cliente.cliente3.getTelefono()) ||
-			                   Cliente.cliente1.getTelefono().equals(Cliente.cliente3.getTelefono())) {
-			                System.out.println("Teléfono repetido");
-			                Cliente.cliente3.inTelefono();
-			            }
-			            Cliente.cliente3.inDireccion();
-			        }
-			    }
+				System.out.println("Cliente 1");
+				Cliente.cliente1.inNombreYapellidos();
+				Cliente.cliente1.fechaAlta();
+				Cliente.cliente1.inTelefono();
+				Cliente.cliente1.inDireccion();
+				if (Cliente.cliente2.getNombre() == null) {
+					System.out.println("Cliente 2");
+					Cliente.cliente2.inNombreYapellidos();
+					Cliente.cliente2.fechaAlta();
+					Cliente.cliente2.inTelefono();
+					while (Cliente.cliente1.getTelefono().equals(Cliente.cliente2.getTelefono())) {
+						System.out.println("Teléfono repetido");
+						Cliente.cliente2.inTelefono();
+					}
+					Cliente.cliente2.inDireccion();
+					if (Cliente.cliente3.getNombre() == null) {
+						System.out.println("Cliente 3");
+						Cliente.cliente3.inNombreYapellidos();
+						Cliente.cliente3.fechaAlta();
+						Cliente.cliente3.inTelefono();
+						while (Cliente.cliente2.getTelefono().equals(Cliente.cliente3.getTelefono()) ||
+								Cliente.cliente1.getTelefono().equals(Cliente.cliente3.getTelefono())) {
+							System.out.println("Teléfono repetido");
+							Cliente.cliente3.inTelefono();
+						}
+						Cliente.cliente3.inDireccion();
+					}
+				}
 			} else {
-			    System.err.println("Los clientes ya se han introducido");
+				System.err.println("Los clientes ya se han introducido");
 			}
 			menuInicial();
 			break;
@@ -164,11 +162,11 @@ public class GestionPedidos {
 			Pedido.listaPedido.pagar(op1);
 			menuInicial();
 			break;
-		case "0":
-			System.out.println("Saliendo....");
-			break;
 		case "6":
 			menuPedidos();
+			break;
+		case "0":
+			System.out.println("Saliendo....");
 			break;
 		default:
 			System.out.println("Selección incorrecta");
@@ -178,17 +176,18 @@ public class GestionPedidos {
 	}
 	public static void menuPedidos() {
 		System.out.print("MENÚ PEDIDOS\n"
-				+ "1. Introduce el número de teléfono --> ");
+				+ "Introduce el número de teléfono --> ");
 		String scTelefono = sc.nextLine();		
 		try {
 			if (Cliente.cliente1.getTelefono().equals(scTelefono)) {
-				System.out.println("Cliente: " + Cliente.cliente1.getNombre());
-			}
-			if (Cliente.cliente2.getTelefono().equals(scTelefono)) {
-				System.out.println("Cliente: " + Cliente.cliente2.getNombre());
-			}
-			if (Cliente.cliente3.getTelefono().equals(scTelefono)) {
-				System.out.println("Cliente: " + Cliente.cliente3.getNombre());
+				Cliente.cliente1.datos();
+			}else if (Cliente.cliente2.getTelefono().equals(scTelefono)) {
+				Cliente.cliente2.datos();
+			}else if (Cliente.cliente3.getTelefono().equals(scTelefono)) {
+				Cliente.cliente3.datos();
+			}else {
+				System.err.println("El teléfono no pertenece a ningún cliente");
+				menuPedidos();
 			}
 			menuInicial();
 		} catch (Exception e) {

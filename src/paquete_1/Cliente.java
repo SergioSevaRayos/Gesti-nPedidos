@@ -106,7 +106,7 @@ public class Cliente {
  // ------------------------------------------------- Inicio Número pedido
     public void agregarPedido() {
 			this.numPedido += 1;
-	}
+    }
     public void setPedido(int numPedido) {
         this.numPedido = numPedido;
     }
@@ -123,7 +123,7 @@ public class Cliente {
 				+ "Teléfono      --> " + telefono + "\n"
 				+ "Tipo          --> " + tipoTelefono + "\n"
 				+ "Dirección     --> " + direccion + "\n"
-				+ "Num Pedido    --> " + numPedido);
+				+ "Num Pedido    --> " + numPedido + "\n");
 		
 	}
 }
