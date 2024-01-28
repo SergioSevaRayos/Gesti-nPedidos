@@ -446,7 +446,15 @@ public class GestionPedidos {
 			menuProductos();
 			break;
 		case "0":
-			
+			System.out.println("Gestión del pago");
+			System.out.print("Selección del tipo de pago\n"
+					+ "1. Efectivo\n"
+					+ "2. Tarjeta\n"
+					+ "3. Cuenta\n"
+					+ "Tipo de pago --> ");
+			String op1 = sc.nextLine();
+			System.out.println("");
+			Pedido.listaPedido.pagar(op1);
 			break;
 		default:
 			System.err.println("Selección incorrecta");
@@ -506,6 +514,9 @@ public class GestionPedidos {
 				+ "\nTOTAL -----------------------------------------> " + Pedido.calcularTotalPedido() + "\n"
 				+ "=====================================================");
 	}
+	
+	
+	
 	private static String limitarCaracteres(String cadena, int longitudMaxima) {
 	    return cadena.length() > longitudMaxima ? cadena.substring(0, longitudMaxima) : cadena;
 	}
