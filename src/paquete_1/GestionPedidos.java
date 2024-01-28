@@ -7,8 +7,10 @@ public class GestionPedidos {
 	
 	static int cantidadPr1;
 
-	// TODO: tengo que terminar de crear el menú e ir implantado todas las partes de la
-	// práctica
+	// TODO: Borrar todas las líneas de código inservibles
+	// TODO: Incorporar el estado de los pedidos al proceso 
+	// TODO: Vincular el coste del pedido al cobro (efectivo-tarjeta-cuenta)
+	// TODO: Mejorar la interfaz
 	public static void menuInicial() {
 		System.out.println("MENÚ INICIAL\n"
 				+ "1. Crear clientes\n"
@@ -64,55 +66,56 @@ public class GestionPedidos {
 			op = sc.nextLine();
 			switch (op) {
 			case "1":
-				System.out.println("CREAR PRODUCTOS");
-				if (Producto.producto1.getNombre() == null) {
-					System.out.println("Producto 1");
-					Producto.producto1.inNombreProducto();
-					Producto.producto1.setPrecio();
-					Producto.producto1.setCantiadad();
-					System.out.println("Producto 1 insertado");
-				}
-				if (Producto.producto2.getNombre() == null) {
-					System.out.println("Producto 2");
-					Producto.producto2.inNombreProducto();
-					Producto.producto2.setPrecio();
-					Producto.producto2.setCantiadad();
-					System.out.println("Producto 2 insertado");
-				}
-				if (Producto.producto3.getNombre() == null) {
-					System.out.println("Producto 3");
-					Producto.producto3.inNombreProducto();
-					Producto.producto3.setPrecio();
-					Producto.producto3.setCantiadad();
-					System.out.println("Producto 3 insertado");
-				}
-				if (Producto.producto4.getNombre() == null) {
-					System.out.println("Producto 4");
-					Producto.producto4.inNombreProducto();
-					Producto.producto4.setPrecio();
-					Producto.producto4.setCantiadad();
-					System.out.println("Producto 2 insertado");
-				}
-				if (Producto.producto5.getNombre() == null) {
-					System.out.println("Producto 5");
-					Producto.producto5.inNombreProducto();
-					Producto.producto5.setPrecio();
-					Producto.producto5.setCantiadad();
-					System.out.println("Producto 5 insertado");
-				}
-				if (
-					Cliente.cliente1.getNombre() 	!= null &&
-					Cliente.cliente2.getNombre() 	!= null &&
-					Cliente.cliente3.getNombre() 	!= null &&
-					Producto.producto1.getNombre() 	!= null &&
-					Producto.producto2.getNombre() 	!= null &&
-					Producto.producto3.getNombre() 	!= null &&
-					Producto.producto4.getNombre() 	!= null &&	
-					Producto.producto5.getNombre() 	!= null ) {
-					System.out.println("Todos los productos han sido introducidos");
-					menuPedidos();
-				}
-				menuInicial();
+//				System.out.println("CREAR PRODUCTOS");
+//				if (Producto.producto1.getNombre() == null) {
+//					System.out.println("Producto 1");
+//					Producto.producto1.inNombreProducto();
+//					Producto.producto1.setPrecio();
+//					Producto.producto1.setCantiadad();
+//					System.out.println("Producto 1 insertado");
+//				}
+//				if (Producto.producto2.getNombre() == null) {
+//					System.out.println("Producto 2");
+//					Producto.producto2.inNombreProducto();
+//					Producto.producto2.setPrecio();
+//					Producto.producto2.setCantiadad();
+//					System.out.println("Producto 2 insertado");
+//				}
+//				if (Producto.producto3.getNombre() == null) {
+//					System.out.println("Producto 3");
+//					Producto.producto3.inNombreProducto();
+//					Producto.producto3.setPrecio();
+//					Producto.producto3.setCantiadad();
+//					System.out.println("Producto 3 insertado");
+//				}
+//				if (Producto.producto4.getNombre() == null) {
+//					System.out.println("Producto 4");
+//					Producto.producto4.inNombreProducto();
+//					Producto.producto4.setPrecio();
+//					Producto.producto4.setCantiadad();
+//					System.out.println("Producto 2 insertado");
+//				}
+//				if (Producto.producto5.getNombre() == null) {
+//					System.out.println("Producto 5");
+//					Producto.producto5.inNombreProducto();
+//					Producto.producto5.setPrecio();
+//					Producto.producto5.setCantiadad();
+//					System.out.println("Producto 5 insertado");
+//				}
+//				if (
+//					Cliente.cliente1.getNombre() 	!= null &&
+//					Cliente.cliente2.getNombre() 	!= null &&
+//					Cliente.cliente3.getNombre() 	!= null &&
+//					Producto.producto1.getNombre() 	!= null &&
+//					Producto.producto2.getNombre() 	!= null &&
+//					Producto.producto3.getNombre() 	!= null &&
+//					Producto.producto4.getNombre() 	!= null &&	
+//					Producto.producto5.getNombre() 	!= null ) {
+//					System.out.println("Todos los productos han sido introducidos");
+//					menuPedidos();
+//				}
+				menuPedidos();
+//				menuInicial();
 				break;
 			case "2":
 				System.out.println("Selecciona el producto que deseas eliminar");
@@ -463,6 +466,7 @@ public class GestionPedidos {
 		}
 	}
 	
+	//TODO: Cambiar los decimales del total del pedido, línea 516
 	public static void resumenPedido() {
 		System.out.println(
 			  "\nRESUMEN DEL PEDIDO\n"
@@ -472,7 +476,7 @@ public class GestionPedidos {
 
 		if (Pedido.listaPedido.getProducto1() != null) {
 			System.out.println(
-					limitarCaracteres(Producto.producto1.getNombre(), 4) + "\t\t" + 
+					limitarCaracteres(Producto.producto1.getNombre(), 6) + "\t\t" + 
 					Producto.producto1.getCantiadad() + "\t\t" +
 					Producto.producto1.getPrecio() + "\t\t" +
 					(Producto.producto1.getCantiadad() * Producto.producto1.getPrecio())

@@ -22,7 +22,7 @@ public class Cliente {
 //	static Cliente cliente1 = new Cliente(null, null, null, null, null, null);
 //	static Cliente cliente2 = new Cliente(null, null, null, null, null, null);
 //	static Cliente cliente3 = new Cliente(null, null, null, null, null, null);
-	static Cliente cliente1 = new Cliente("Sergio", "seva", null, "ronda", "sdfsd", "dfcsaf");
+	static Cliente cliente1 = new Cliente("Sergio", "seva", null, "1", "sdfsd", "dfcsaf");
 	static Cliente cliente2 = new Cliente("Mirima", "alonso", null, "pedal", "khj", "gdf");
 	static Cliente cliente3 = new Cliente("Monuo", "culo", null, "casa", "534", "fgds");
 	// Constructor
