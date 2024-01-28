@@ -9,8 +9,10 @@ public class Pedido {
 	private Producto producto1;
 	private Producto producto2;
 	private Producto producto3;
+	private Producto producto4;
+	private Producto producto5;
 	private String[] estado = {"pagado", "preparando", "listo", "servido"};
-	private float importeTotal = 0.00f;
+	private static double importeTotal;
 	private PasarelaDePago pago;
 	
 	static Pedido listaPedido = new Pedido();
@@ -23,8 +25,10 @@ public class Pedido {
     	this.producto1 = null;
     	this.producto2 = null;
     	this.producto3 = null;
+    	this.producto4 = null;
+    	this.producto5 = null;
         this.estado = null; 
-        this.importeTotal = 0;
+        this.importeTotal = 0.00f;
         this.pago = null;
     }
     
@@ -35,7 +39,10 @@ public class Pedido {
     	this.cliente = cliente;
     }
     public Cliente getCliente() {
-        return cliente;
+        return  cliente;
+    }
+    public String toString() {
+        return "Cliente: " + cliente;
     }
     // Producto 1
     public Producto getProducto1() {
@@ -44,6 +51,7 @@ public class Pedido {
     public void agregarProducto1(Producto producto1) {
     	this.producto1 = producto1;
     }
+
     // Producto 2
     public Producto getProducto2() {
         return producto2;
@@ -51,6 +59,7 @@ public class Pedido {
     public void agregarProducto2(Producto producto2) {
         this.producto2 = producto2;
     }
+
     // Producto 3
     public Producto getProducto3() {
         return producto3;
@@ -58,8 +67,46 @@ public class Pedido {
     public void agregarProducto3(Producto producto3) {
         this.producto3 = producto3;
     }
-    
-    public void pagar(String TipoPago) {
+
+    // Producto 4
+    public Producto getProducto4() {
+        return producto4;
+    }
+    public void agregarProducto4(Producto producto4) {
+        this.producto4 = producto4;
+    }
+
+    // Producto 5
+    public Producto getProducto5() {
+        return producto5;
+    }
+    public void agregarProducto5(Producto producto5) {
+        this.producto5 = producto5;
+    }
+    // Total
+    public static double calcularTotalPedido() {
+        importeTotal = 0.0;
+
+        // Verificar si cada producto en el pedido es diferente de null y agregar su contribución al total
+        if (listaPedido.getProducto1() != null) {
+        	importeTotal += Producto.producto1.getCantiadad() * Producto.producto1.getPrecio();
+        }
+        if (listaPedido.getProducto2() != null) {
+        	importeTotal += Producto.producto2.getCantiadad() * Producto.producto2.getPrecio();
+        }
+        if (listaPedido.getProducto3() != null) {
+        	importeTotal += Producto.producto3.getCantiadad() * Producto.producto3.getPrecio();
+        }
+        if (listaPedido.getProducto4() != null) {
+        	importeTotal += Producto.producto4.getCantiadad() * Producto.producto4.getPrecio();
+        }
+        if (listaPedido.getProducto5() != null) {
+        	importeTotal += Producto.producto5.getCantiadad() * Producto.producto5.getPrecio();
+        }
+
+        return importeTotal;
+    }
+	public void pagar(String TipoPago) {
 
 		switch (TipoPago) {
 		case "1":
