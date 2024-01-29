@@ -3,6 +3,7 @@ package paquete_1;
 // Librerías
 import java.util.*;
 
+
 public class Cliente {
 	 // Atributos
 	private String	nombre;
@@ -22,9 +23,9 @@ public class Cliente {
 //	static Cliente cliente1 = new Cliente(null, null, null, null, null, null);
 //	static Cliente cliente2 = new Cliente(null, null, null, null, null, null);
 //	static Cliente cliente3 = new Cliente(null, null, null, null, null, null);
-	static Cliente cliente1 = new Cliente("Sergio", "seva", null, "1", "sdfsd", "dfcsaf");
-	static Cliente cliente2 = new Cliente("Mirima", "alonso", null, "pedal", "khj", "gdf");
-	static Cliente cliente3 = new Cliente("Monuo", "culo", null, "casa", "534", "fgds");
+	static Cliente cliente1 = new Cliente("Sergio", "seva", null, "1", "sdfsd", null);
+	static Cliente cliente2 = new Cliente("Mirima", "alonso", null, "2", "khj", null);
+	static Cliente cliente3 = new Cliente("Monuo", "culo", null, "3", "534", null);
 	// Constructor
 	public Cliente(String nombre, String apellidos, Date FechaDeAlta, String telefono, String direccion, String historial) {
 		this.nombre 		= nombre;
@@ -105,6 +106,17 @@ public class Cliente {
         return "Dirección: " + direccion;
     }
     // ------------------------------------------------- Fin Dirección
+ // ------------------------------------------------- Inicio Dirección
+ 	public void inHistorial(String historial) {
+ 		this.historial = historial;
+ 	}
+     public void setHistorial(String historial) {
+         this.historial = historial;
+     }
+     public String getHistorial() {
+         return "Historial: " + historial;
+     }
+     // ------------------------------------------------- Fin Dirección
  // ------------------------------------------------- Inicio Número pedido
     public void agregarPedido() {
 			this.numPedido += 1;

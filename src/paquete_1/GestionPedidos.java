@@ -1,6 +1,7 @@
 package paquete_1;
 
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class GestionPedidos {
 	static Scanner sc = new Scanner(System.in);
@@ -466,7 +467,7 @@ public class GestionPedidos {
 		}
 	}
 	
-	//TODO: Cambiar los decimales del total del pedido, línea 516
+	
 	public static void resumenPedido() {
 		System.out.println(
 			  "\nRESUMEN DEL PEDIDO\n"
@@ -514,8 +515,15 @@ public class GestionPedidos {
 					(Producto.producto5.getCantiadad() * Producto.producto5.getPrecio())
 			);
 		}
+	
+        double totalPedido = Pedido.calcularTotalPedido();
+        
+        DecimalFormat formato = new DecimalFormat("#0.00");
+        
+        String totalFormateado = formato.format(totalPedido);
+        
 		System.out.println("====================================================="
-				+ "\nTOTAL -----------------------------------------> " + Pedido.calcularTotalPedido() + "\n"
+				+ "\nTOTAL -----------------------------------------> " + totalFormateado + "\n"
 				+ "=====================================================");
 	}
 	

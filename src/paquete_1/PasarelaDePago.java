@@ -1,42 +1,72 @@
 package paquete_1;
 
+
 //Librerías
 import java.util.*;
 import java.util.InputMismatchException;
+import java.text.DecimalFormat;
 
 public class PasarelaDePago {
 	// Atributos
-	static int		importe;
+	static double	importe;
 	static String 	codigoPago = generarCodigoPago();
 	// Variables
 	static Scanner 	sc = new Scanner(System.in);
 	
 	// Constuctor
-	public PasarelaDePago(int importe, String codigoPago) {
+	public PasarelaDePago(double importe, String codigoPago) {
 		PasarelaDePago.importe 		= importe;
 		PasarelaDePago.codigoPago 	= codigoPago;
 	}
 	public static void efectivo() {
-		while (true) {
-			try {
-				System.out.print("Introduce el importe a pagar --> ");
-				importe = sc.nextInt();
-				break;
-			} catch (InputMismatchException e) {
-				System.err.println("Error: Por Favor, introduce un valor correcto");
-				sc.nextLine();
-			}
+//		while (true) {
+//			try {
+//				System.out.print("Introduce el importe a pagar --> ");
+//				importe = sc.nextInt();
+//				break;
+//			} catch (InputMismatchException e) {
+//				System.err.println("Error: Por Favor, introduce un valor correcto");
+//				sc.nextLine();
+//			}
+//		}
+		importe = Pedido.calcularTotalPedido();
+		
+		double totalPedido = Pedido.calcularTotalPedido();
+        
+        DecimalFormat formato = new DecimalFormat("#0.00");
+        
+        String totalFormateado = formato.format(totalPedido);
+		
+		System.out.println("El importe es: " + totalFormateado);
+		generarCodigoPago();
+//		System.out.println("Código de pago: " + codigoPago);
+//		Cliente.cliente1.inHistorial(codigoPago);
+		System.out.println("Código de pago: " + codigoPago);
+		if (Pedido.listaPedido.getCliente() == Cliente.cliente1) {
+			Cliente.cliente1.inHistorial(codigoPago);
+			System.out.println(Pedido.listaPedido.getCliente() + " | Código: " + codigoPago);
 		}
-		int numCaracteres = String.valueOf(importe).length();
-		if (numCaracteres == 2) {
-			System.out.println("La cantidad de caracteres introducida es correcta" + "\n"
-					+ "PAGADO");
-			generarCodigoPago();
-			System.out.println("Código de pago --> " + codigoPago);
-		}else {
-			System.out.println("La cantidad de caracteres es incorrecta");
-			efectivo();
+		if (Pedido.listaPedido.getCliente() == Cliente.cliente2) {
+			Cliente.cliente2.inHistorial(codigoPago);
+			System.out.println(Pedido.listaPedido.getCliente() + " | Código: " + codigoPago);
 		}
+		if (Pedido.listaPedido.getCliente() == Cliente.cliente3) {
+			Cliente.cliente3.inHistorial(codigoPago);
+			System.out.println(Pedido.listaPedido.getCliente() + " | Código: " + codigoPago);
+		}
+		
+
+		
+//		int numCaracteres = String.valueOf(importe).length();
+//		if (numCaracteres == 2) {
+//			System.out.println("La cantidad de caracteres introducida es correcta" + "\n"
+//					+ "PAGADO");
+//			generarCodigoPago();
+//			System.out.println("Código de pago --> " + codigoPago);
+//		}else {
+//			System.out.println("La cantidad de caracteres es incorrecta");
+//			efectivo();
+//		}
 
 	}
 	public static void tarjeta() {
