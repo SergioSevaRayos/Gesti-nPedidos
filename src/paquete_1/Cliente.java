@@ -114,7 +114,7 @@ public class Cliente {
          this.historial = historial;
      }
      public String getHistorial() {
-         return "Historial: " + historial;
+         return "Código: " + historial;
      }
      // ------------------------------------------------- Fin Dirección
  // ------------------------------------------------- Inicio Número pedido

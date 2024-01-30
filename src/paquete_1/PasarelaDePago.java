@@ -5,13 +5,15 @@ package paquete_1;
 import java.util.*;
 import java.util.InputMismatchException;
 import java.text.DecimalFormat;
+import java.util.Random;
 
 public class PasarelaDePago {
 	// Atributos
 	static double	importe;
-	static String 	codigoPago = generarCodigoPago();
+	static String 	codigoPago;
 	// Variables
 	static Scanner 	sc = new Scanner(System.in);
+	private static Random random = new Random();
 	
 	// Constuctor
 	public PasarelaDePago(double importe, String codigoPago) {
@@ -20,30 +22,34 @@ public class PasarelaDePago {
 	}
 	public static void efectivo() {
 
-//		importe = Pedido.calcularTotalPedido();
-//		
-//		double totalPedido = Pedido.calcularTotalPedido();
-//        
-//        DecimalFormat formato = new DecimalFormat("#0.00");
-//        
-//        String totalFormateado = formato.format(totalPedido);
+		importe = Pedido.calcularTotalPedido();
+		
+		double totalPedido = Pedido.calcularTotalPedido();
+        
+        DecimalFormat formato = new DecimalFormat("#0.00");
+        
+        String totalFormateado = formato.format(totalPedido);
+		
+		System.out.println("El importe es: " + totalFormateado);
 		
 		if (Pedido.listaPedido.getCliente() == Cliente.cliente1) {
-			GestionPedidos.resumenPedido();
-			System.out.println(Pedido.listaPedido.getCliente() + " | Código: " + codigoPago + "\n");
-			Cliente.cliente1.datos();
+			codigoPago = PasarelaDePago.generarCodigoPago();
+			Cliente.cliente1.inHistorial(codigoPago);
+			System.out.println(Pedido.listaPedido.getCliente() + " | " + Cliente.cliente1.getHistorial());
 		}
 		if (Pedido.listaPedido.getCliente() == Cliente.cliente2) {
-			GestionPedidos.resumenPedido();
-			System.out.println(Pedido.listaPedido.getCliente() + " | Código: " + codigoPago + "\n");
-			Cliente.cliente2.datos();
+			PasarelaDePago.generarCodigoPago();
+			codigoPago = PasarelaDePago.generarCodigoPago();
+			Cliente.cliente2.inHistorial(codigoPago);
+			System.out.println(Pedido.listaPedido.getCliente() + " | " + Cliente.cliente2.getHistorial());
 		}
 		if (Pedido.listaPedido.getCliente() == Cliente.cliente3) {
-			GestionPedidos.resumenPedido();
-			System.out.println(Pedido.listaPedido.getCliente() + " | Código: " + codigoPago + "\n");
-			Cliente.cliente3.datos();
+			PasarelaDePago.generarCodigoPago();
+			codigoPago = PasarelaDePago.generarCodigoPago();
+			Cliente.cliente3.inHistorial(codigoPago);
+			System.out.println(Pedido.listaPedido.getCliente() + " | " + Cliente.cliente3.getHistorial());
 		}
-		
+
 	}
 	public static void tarjeta() {
 		System.out.println("Forma de pago mediante tarjeta seleccionado"
@@ -199,18 +205,31 @@ public class PasarelaDePago {
 		}
 	}
 	public static String generarCodigoPago() {
-        // Obtener la fecha actual
+		
+        if (random == null) {
+            random = new Random();
+        }
+        
         Date fechaActual = new Date();
 
-        // Obtener el tiempo en milisegundos desde la época
         long tiempoMilisegundos = fechaActual.getTime();
 
-        // Convertir el tiempo en milisegundos a una cadena
-        String codigoPago = Long.toString(tiempoMilisegundos);
+        int componenteAleatorio = random.nextInt(10000);
+
+        String codigoPago = Long.toString(tiempoMilisegundos) + componenteAleatorio;
 
         return codigoPago;
     }
 	public static void main(String[] args) {
+//		System.out.println(PasarelaDePago.generarCodigoPago());
+//		
+//		System.out.println(PasarelaDePago.generarCodigoPago());
+//		
+//		System.out.println(PasarelaDePago.generarCodigoPago());
+		
+		
+		
+		
 //		efectivo();
 //		tarjeta();
 //		cuenta();
