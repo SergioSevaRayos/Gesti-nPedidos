@@ -9,8 +9,8 @@ public class GestionPedidos {
 	static int cantidadPr1;
 
 	// TODO: Borrar todas las líneas de código inservibles
-	// TODO: Incorporar el estado de los pedidos al proceso 
-	// TODO: Vincular el coste del pedido al cobro (efectivo-tarjeta-cuenta)
+	// TODO: Incorporar el estado de los pedidos al proceso (me lo pienso) 
+	// TODO: Añadir la generación del "codigoPago" a las métodos tarjeta y cuenta
 	// TODO: Mejorar la interfaz
 	public static void menuInicial() {
 		System.out.println("MENÚ INICIAL\n"
