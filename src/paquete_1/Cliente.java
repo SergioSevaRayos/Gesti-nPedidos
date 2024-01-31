@@ -20,12 +20,12 @@ public class Cliente {
 	static String 	tipoTelefono;
 	public String 	inNombreYapellidos;
 	
-//	static Cliente cliente1 = new Cliente(null, null, null, null, null, null);
-//	static Cliente cliente2 = new Cliente(null, null, null, null, null, null);
-//	static Cliente cliente3 = new Cliente(null, null, null, null, null, null);
-	static Cliente cliente1 = new Cliente("Sergio", "seva", null, "1", "sdfsd", null);
-	static Cliente cliente2 = new Cliente("Mirima", "alonso", null, "2", "khj", null);
-	static Cliente cliente3 = new Cliente("Monuo", "culo", null, "3", "534", null);
+	static Cliente cliente1 = new Cliente(null, null, null, null, null, null);
+	static Cliente cliente2 = new Cliente(null, null, null, null, null, null);
+	static Cliente cliente3 = new Cliente(null, null, null, null, null, null);
+//	static Cliente cliente1 = new Cliente("Sergio", "seva", null, "1", "sdfsd", null);
+//	static Cliente cliente2 = new Cliente("Mirima", "alonso", null, "2", "khj", null);
+//	static Cliente cliente3 = new Cliente("Monuo", "culo", null, "3", "534", null);
 	// Constructor
 	public Cliente(String nombre, String apellidos, Date FechaDeAlta, String telefono, String direccion, String historial) {
 		this.nombre 		= nombre;

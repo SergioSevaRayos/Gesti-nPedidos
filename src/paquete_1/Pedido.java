@@ -113,11 +113,11 @@ public class Pedido {
 			break;
 		case "2":
 			System.out.println("TARJETA");
-//			PasarelaDePago.tarjeta();
+			PasarelaDePago.tarjeta();
 			break;
 		case "3":
 			System.out.println("CUENTA");
-//			PasarelaDePago.cuenta();
+			PasarelaDePago.cuenta();
 			break;
 		default:
 			System.out.println("Opción incorrecta, vuelve a intentarlo");

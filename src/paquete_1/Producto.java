@@ -11,16 +11,16 @@ public class Producto {
 
 	static Scanner 	sc = new Scanner(System.in);
 	
-//	static Producto producto1 = new Producto(null, 0, 0);
-//	static Producto producto2 = new Producto(null, 0, 0);
-//	static Producto producto3 = new Producto(null, 0, 0);
-//	static Producto producto4 = new Producto(null, 0, 0);
-//	static Producto producto5 = new Producto(null, 0, 0);
-	static Producto producto1 = new Producto("Pan", 3.4f , 3);
-	static Producto producto2 = new Producto("Queso", 5.4f , 4);
-	static Producto producto3 = new Producto("Coliflor", 6.2f , 2);
-	static Producto producto4 = new Producto("Hamburguesa", 7.3f , 5);
-	static Producto producto5 = new Producto("Lima", 6.4f , 7);
+	static Producto producto1 = new Producto(null, 0, 0);
+	static Producto producto2 = new Producto(null, 0, 0);
+	static Producto producto3 = new Producto(null, 0, 0);
+	static Producto producto4 = new Producto(null, 0, 0);
+	static Producto producto5 = new Producto(null, 0, 0);
+//	static Producto producto1 = new Producto("Pan", 3.4f , 3);
+//	static Producto producto2 = new Producto("Queso", 5.4f , 4);
+//	static Producto producto3 = new Producto("Coliflor", 6.2f , 2);
+//	static Producto producto4 = new Producto("Hamburguesa", 7.3f , 5);
+//	static Producto producto5 = new Producto("Lima", 6.4f , 7);
 	// Contructor
 	Producto(String nombre, float precio, int cantidad){
 		this.nombre 	= nombre;
