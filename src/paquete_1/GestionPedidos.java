@@ -13,7 +13,7 @@ public class GestionPedidos {
 	public static void menuInicial() {
 		System.out.println("MENÚ INICIAL\n"
 				+ "1. Crear clientes\n"
-				+ "2. Crear productos\n"
+				+ "2. Productos\n"
 				+ "0. Salir");
 		String op = sc.nextLine();
 		switch (op) {
@@ -128,7 +128,8 @@ public class GestionPedidos {
 						+ "2. " + Producto.producto2.getNombre() + "\n"
 						+ "3. " + Producto.producto3.getNombre() + "\n"
 						+ "4. " + Producto.producto4.getNombre() + "\n"
-						+ "5. " + Producto.producto5.getNombre() + "\n");
+						+ "5. " + Producto.producto5.getNombre() + "\n"
+						+ "0. Atrás");
 				op = sc.nextLine();
 				switch (op) {
 				case "1":
@@ -184,7 +185,7 @@ public class GestionPedidos {
 		System.out.println("MENU PEDIDOS\n"
 				+ "1. Realizar pedidos\n"
 				+ "\n"
-				+ "0. Salir");
+				+ "0. Atrás");
 		String scTelefono = sc.nextLine();	
 		switch (scTelefono) {
 		case "1":
@@ -195,19 +196,15 @@ public class GestionPedidos {
 				if (Cliente.cliente1.getTelefono().equals(scTelefono)) {
 					Cliente.cliente1.datos();
 					Pedido.listaPedido.agregarCliente(Cliente.cliente1);
-					
 					menuProductos();
-//					System.out.println(Pedido.listaPedido.getCliente() + "\n");
 				}else if (Cliente.cliente2.getTelefono().equals(scTelefono)) {
 					Cliente.cliente2.datos();
 					Pedido.listaPedido.agregarCliente(Cliente.cliente2);
 					menuProductos();
-//					System.out.println(Pedido.listaPedido.getCliente() + "\n");
 				}else if (Cliente.cliente3.getTelefono().equals(scTelefono)) {
 					Cliente.cliente3.datos();
 					Pedido.listaPedido.agregarCliente(Cliente.cliente3);
 					menuProductos();
-//					System.out.println(Pedido.listaPedido.getCliente() + "\n");
 				}else {
 					System.err.println("El teléfono no pertenece a ningún cliente");
 					menuPedidos();
@@ -229,14 +226,30 @@ public class GestionPedidos {
 
 	}
 	public static void menuProductos() {
-		System.out.println("SELECCION DE PRODUCTOS\n"
-				+ "1. " + Producto.producto1.getNombre() + "\n"
-				+ "2. " + Producto.producto2.getNombre() + "\n"
-				+ "3. " + Producto.producto3.getNombre() + "\n"
-				+ "4. " + Producto.producto4.getNombre() + "\n"
-				+ "5. " + Producto.producto5.getNombre() + "\n"
-				+ "\n"
-				+ "0. Terminar pedido");
+		if (Producto.producto1 != null) {
+			System.out.println("1. " + Producto.producto1.getNombre());
+		}
+		if (Producto.producto2 != null) {
+			System.out.println("2. " + Producto.producto2.getNombre());
+		}
+		if (Producto.producto3 != null) {
+			System.out.println("3. " + Producto.producto3.getNombre());
+		}
+		if (Producto.producto4 != null) {
+			System.out.println("4. " + Producto.producto4.getNombre());
+		}
+		if (Producto.producto5 != null) {
+			System.out.println("5. " + Producto.producto5.getNombre());
+		}
+		System.out.println("0. Terminar pedido");
+//		System.out.println("SELECCION DE PRODUCTOS\n"
+//				+ "1. " + Producto.producto1.getNombre() + "\n"
+//				+ "2. " + Producto.producto2.getNombre() + "\n"
+//				+ "3. " + Producto.producto3.getNombre() + "\n"
+//				+ "4. " + Producto.producto4.getNombre() + "\n"
+//				+ "5. " + Producto.producto5.getNombre() + "\n"
+//				+ "\n"
+//				+ "0. Terminar pedido");
 		String op = sc.nextLine();
 		switch (op) {
 		case "1":
