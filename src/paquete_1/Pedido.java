@@ -87,7 +87,6 @@ public class Pedido {
     public static double calcularTotalPedido() {
         importeTotal = 0.00f;
 
-        // Verificar si cada producto en el pedido es diferente de null y agregar su contribución al total
         if (listaPedido.getProducto1() != null) {
         	importeTotal += Producto.producto1.getCantiadad() * Producto.producto1.getPrecio();
         }

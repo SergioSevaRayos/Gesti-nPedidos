@@ -363,6 +363,7 @@ public class GestionPedidos {
 				if (Cliente.cliente1.getTelefono().equals(scTelefono)) {
 					Cliente.cliente1.datos();
 					Pedido.listaPedido.agregarCliente(Cliente.cliente1);
+					
 					menuProductos();
 //					System.out.println(Pedido.listaPedido.getCliente() + "\n");
 				}else if (Cliente.cliente2.getTelefono().equals(scTelefono)) {
@@ -459,6 +460,11 @@ public class GestionPedidos {
 			String op1 = sc.nextLine();
 			System.out.println("");
 			Pedido.listaPedido.pagar(op1);
+			Pedido.listaPedido.agregarProducto1(null);
+			Pedido.listaPedido.agregarProducto2(null);
+			Pedido.listaPedido.agregarProducto3(null);
+			Pedido.listaPedido.agregarProducto4(null);
+			Pedido.listaPedido.agregarProducto5(null);
 			break;
 		default:
 			System.err.println("Selección incorrecta");

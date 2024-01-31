@@ -36,6 +36,7 @@ public class PasarelaDePago {
 			codigoPago = PasarelaDePago.generarCodigoPago();
 			Cliente.cliente1.inHistorial(codigoPago);
 			System.out.println(Pedido.listaPedido.getCliente() + " | " + Cliente.cliente1.getHistorial());
+			
 		}
 		if (Pedido.listaPedido.getCliente() == Cliente.cliente2) {
 			PasarelaDePago.generarCodigoPago();
