@@ -105,6 +105,7 @@ public class Pedido {
 
         return importeTotal;
     }
+    // TODO: Añadir try/catch
 	public void pagar(String TipoPago) {
 
 		switch (TipoPago) {

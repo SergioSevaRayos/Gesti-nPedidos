@@ -36,19 +36,21 @@ public class PasarelaDePago {
 			codigoPago = PasarelaDePago.generarCodigoPago();
 			Cliente.cliente1.inHistorial(codigoPago);
 			System.out.println(Pedido.listaPedido.getCliente() + " | " + Cliente.cliente1.getHistorial());
-
+			Cliente.cliente1.agregarPedido();
 		}
 		if (Pedido.listaPedido.getCliente() == Cliente.cliente2) {
 			PasarelaDePago.generarCodigoPago();
 			codigoPago = PasarelaDePago.generarCodigoPago();
 			Cliente.cliente2.inHistorial(codigoPago);
 			System.out.println(Pedido.listaPedido.getCliente() + " | " + Cliente.cliente2.getHistorial());
+			Cliente.cliente2.agregarPedido();
 		}
 		if (Pedido.listaPedido.getCliente() == Cliente.cliente3) {
 			PasarelaDePago.generarCodigoPago();
 			codigoPago = PasarelaDePago.generarCodigoPago();
 			Cliente.cliente3.inHistorial(codigoPago);
 			System.out.println(Pedido.listaPedido.getCliente() + " | " + Cliente.cliente3.getHistorial());
+			Cliente.cliente3.agregarPedido();
 		}
 
 	}

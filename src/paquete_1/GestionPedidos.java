@@ -8,7 +8,7 @@ public class GestionPedidos {
 	
 	static int cantidadPr1;
 
-	// TODO: Borrar todas las líneas de código inservibles
+	// TODO: Añadir try/catch donde sea necesario
 	// TODO: Mejorar la interfaz
 	public static void menuInicial() {
 		System.out.println("MENÚ INICIAL\n"
@@ -60,6 +60,7 @@ public class GestionPedidos {
 			System.out.println("MENÚ PRODUCTOS\n"
 					+ "1. Introducir producto\n"
 					+ "2. Borrar producto\n"
+					+ "3. Ver productos introducidos"
 					+ "\n"
 					+ "0. Atrás");
 			op = sc.nextLine();
@@ -162,6 +163,24 @@ public class GestionPedidos {
 				}
 				menuInicial();
 				break;
+			case "3":
+				if (Producto.producto1.getNombre() != null) {
+					System.out.println("--> " + Producto.producto1.getNombre());
+				}
+				if (Producto.producto2.getNombre() != null) {
+					System.out.println("--> " + Producto.producto2.getNombre());
+				}
+				if (Producto.producto3.getNombre() != null) {
+					System.out.println("--> " + Producto.producto3.getNombre());
+				}
+				if (Producto.producto4.getNombre() != null) {
+					System.out.println("--> " + Producto.producto4.getNombre());
+				}
+				if (Producto.producto5.getNombre() != null) {
+					System.out.println("--> " + Producto.producto5.getNombre());
+				}
+				menuInicial();
+				break;
 			case "0":
 				menuInicial();
 				break;
@@ -242,14 +261,7 @@ public class GestionPedidos {
 			System.out.println("5. " + Producto.producto5.getNombre());
 		}
 		System.out.println("0. Terminar pedido");
-//		System.out.println("SELECCION DE PRODUCTOS\n"
-//				+ "1. " + Producto.producto1.getNombre() + "\n"
-//				+ "2. " + Producto.producto2.getNombre() + "\n"
-//				+ "3. " + Producto.producto3.getNombre() + "\n"
-//				+ "4. " + Producto.producto4.getNombre() + "\n"
-//				+ "5. " + Producto.producto5.getNombre() + "\n"
-//				+ "\n"
-//				+ "0. Terminar pedido");
+
 		String op = sc.nextLine();
 		switch (op) {
 		case "1":
@@ -278,6 +290,7 @@ public class GestionPedidos {
 			menuProductos();
 			break;
 		case "0":
+			// TODO: Añadir el try/catch ¡tengo que ver donde esta el fallo! ¿en clase "GestionPedidos" o en "Pedido"?
 			System.out.println("Gestión del pago");
 			System.out.print("Selección del tipo de pago\n"
 					+ "1. Efectivo\n"
@@ -356,7 +369,7 @@ public class GestionPedidos {
         String totalFormateado = formato.format(totalPedido);
         
 		System.out.println("====================================================="
-				+ "\nTOTAL -----------------------------------------> " + totalFormateado + "\n"
+				+ "\nTOTAL ----------------------------------------> " + totalFormateado + "\n"
 				+ "=====================================================");
 	}
 	
