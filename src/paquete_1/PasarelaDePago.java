@@ -77,26 +77,6 @@ public class PasarelaDePago {
 					+ "Número 	--> " + numeroTarjeta);
 			if (numeroTarjeta.matches(formatoVisMasOk)) {
 				System.out.println("Formato adecuado");
-//				while (true) {
-//					try {
-//						System.out.print("Introduce el importe a pagar --> ");
-//						importe = sc.nextInt();
-//						break;
-//					} catch (InputMismatchException e) {
-//						System.err.println("Error: Por Favor, introduce un valor correcto");
-//						sc.nextLine();
-//					}
-//				}
-//				int numCaracteres = String.valueOf(importe).length();
-//				if (numCaracteres == 2) {
-//					System.out.println("La cantidad de caracteres introducida es correcta" + "\n"
-//							+ "PAGADO");
-//					generarCodigoPago();
-//					System.out.println("Código de pago --> " + codigoPago);
-//				}else {
-//					System.out.println("La cantidad de caracteres es incorrecta");
-//					efectivo();
-//				}
 
 			}else {
 				System.err.println("ERROR: Formato incorrecto");
@@ -108,26 +88,6 @@ public class PasarelaDePago {
 					+ "Número 	--> " + numeroTarjeta);
 			if (numeroTarjeta.matches(formatoVisMasOk)) {
 				System.out.println("Formato adecuado");
-//				while (true) {
-//					try {
-//						System.out.print("Introduce el importe a pagar --> ");
-//						importe = sc.nextInt();
-//						break;
-//					} catch (InputMismatchException e) {
-//						System.err.println("Error: Por Favor, introduce un valor correcto");
-//						sc.nextLine();
-//					}
-//				}
-//				int numCaracteres = String.valueOf(importe).length();
-//				if (numCaracteres == 2) {
-//					System.out.println("La cantidad de caracteres introducida es correcta" + "\n"
-//							+ "PAGADO");
-//					generarCodigoPago();
-//					System.out.println("Código de pago --> " + codigoPago);
-//				}else {
-//					System.out.println("La cantidad de caracteres es incorrecta");
-//					efectivo();
-//				}
 			}else {
 				System.err.println("ERROR: Formato incorrecto");
 				tarjeta();
@@ -137,26 +97,6 @@ public class PasarelaDePago {
 					+ "Número 	--> " + numeroTarjeta);
 			if (numeroTarjeta.matches(formatoAmericanOk)) {
 				System.out.println("Formato adecuado");
-//				while (true) {
-//					try {
-//						System.out.print("Introduce el importe a pagar --> ");
-//						importe = sc.nextInt();
-//						break;
-//					} catch (InputMismatchException e) {
-//						System.err.println("Error: Por Favor, introduce un valor correcto");
-//						sc.nextLine();
-//					}
-//				}
-//				int numCaracteres = String.valueOf(importe).length();
-//				if (numCaracteres == 2) {
-//					System.out.println("La cantidad de caracteres introducida es correcta" + "\n"
-//							+ "PAGADO");
-//					generarCodigoPago();
-//					System.out.println("Código de pago --> " + codigoPago);
-//				}else {
-//					System.out.println("La cantidad de caracteres es incorrecta");
-//					efectivo();
-//				}
 			}else {
 				System.err.println("ERROR: Formato incorrecto");
 				tarjeta();
@@ -210,26 +150,6 @@ public class PasarelaDePago {
 		}
 
 		if (numeroCuenta.matches(formatoCuentaOk)) {
-//			while (true) {
-//				try {
-//					System.out.print("Introduce el importe a pagar --> ");
-//					importe = sc.nextInt();
-//					break;
-//				} catch (InputMismatchException e) {
-//					System.err.println("Error: Por Favor, introduce un valor correcto");
-//					sc.nextLine();
-//				}
-//			}
-//			int numCaracteres = String.valueOf(importe).length();
-//			if (numCaracteres == 2) {
-//				System.out.println("\nLa cantidad introducida es correcta" + "\n"
-//						+ "PAGADO");
-//				generarCodigoPago();
-//				System.out.println("Código de pago --> " + codigoPago);
-//			}else {
-//				System.out.println("La cantidad es incorrecta");
-//				efectivo();
-//			}
 
 		}else {
 			System.err.println("ERROR: Formato incorrecto");
@@ -280,19 +200,8 @@ public class PasarelaDePago {
 
 		return codigoPago;
 	}
-	public static void main(String[] args) {
-		//		System.out.println(PasarelaDePago.generarCodigoPago());
-		//		
-		//		System.out.println(PasarelaDePago.generarCodigoPago());
-		//		
-		//		System.out.println(PasarelaDePago.generarCodigoPago());
-
-
-
-
-		//		efectivo();
-		//		tarjeta();
-		//		cuenta();
-	}
+//	public static void main(String[] args) {
+//
+//	}
 
 }
