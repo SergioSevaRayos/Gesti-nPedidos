@@ -290,7 +290,6 @@ public class GestionPedidos {
 			menuProductos();
 			break;
 		case "0":
-			// TODO: Añadir el try/catch ¡tengo que ver donde esta el fallo! ¿en clase "GestionPedidos" o en "Pedido"?
 			System.out.println("Gestión del pago");
 			System.out.print("Selección del tipo de pago\n"
 					+ "1. Efectivo\n"

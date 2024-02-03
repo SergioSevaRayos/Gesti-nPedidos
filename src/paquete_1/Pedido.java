@@ -122,7 +122,7 @@ public class Pedido {
 			break;
 		default:
 			System.out.println("Opción incorrecta, vuelve a intentarlo");
-			pagar(TipoPago);
+			GestionPedidos.menuProductos();
 			break;
 		}
 	}
