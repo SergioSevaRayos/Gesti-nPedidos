@@ -11,25 +11,21 @@ public class Pedido {
 	private Producto producto3;
 	private Producto producto4;
 	private Producto producto5;
-	private String[] estado = {"pagado", "preparando", "listo", "servido"};
 	private static double importeTotal;
-	private PasarelaDePago pago;
-	
 	static Pedido listaPedido = new Pedido();
 	
     static Scanner sc = new Scanner(System.in);
 	
     // Constructor
-    Pedido() {
+    @SuppressWarnings("static-access")
+	Pedido() {
     	this.cliente = null;
     	this.producto1 = null;
     	this.producto2 = null;
     	this.producto3 = null;
     	this.producto4 = null;
     	this.producto5 = null;
-        this.estado = null; 
         this.importeTotal = 0.00f;
-        this.pago = null;
     }
     
 
@@ -105,7 +101,6 @@ public class Pedido {
 
         return importeTotal;
     }
-    // TODO: Añadir try/catch
 	public void pagar(String TipoPago) {
 
 		switch (TipoPago) {
@@ -125,21 +120,5 @@ public class Pedido {
 			GestionPedidos.menuProductos();
 			break;
 		}
-	}
-
-
-    public static void main(String[] args) {
-//    	pagar(TipoPago);
-    	
-	}
-
-
-	
-    
-    
-    
-    
-
-
-    
+	}    
 }

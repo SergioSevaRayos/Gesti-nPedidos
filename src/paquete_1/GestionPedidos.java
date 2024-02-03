@@ -7,9 +7,7 @@ public class GestionPedidos {
 	static Scanner sc = new Scanner(System.in);
 	
 	static int cantidadPr1;
-
-	// TODO: Añadir try/catch donde sea necesario
-	// TODO: Mejorar la interfaz
+	
 	public static void menuInicial() {
 		System.out.println("MENÚ INICIAL\n"
 				+ "1. Crear clientes\n"
@@ -18,7 +16,6 @@ public class GestionPedidos {
 		String op = sc.nextLine();
 		switch (op) {
 		case "1":
-
 			System.out.println("CREAR CLIENTES");
 			if (Cliente.cliente1.getNombre() == null) {
 				System.out.println("Cliente 1");
@@ -372,17 +369,12 @@ public class GestionPedidos {
 				+ "=====================================================");
 	}
 	
-	
-	
 	private static String limitarCaracteres(String cadena, int longitudMaxima) {
 	    return cadena.length() > longitudMaxima ? cadena.substring(0, longitudMaxima) : cadena;
 	}
 
 	public static void main(String[] args) {
-		
-
 		menuInicial();
-//		resumenPedido();
 	}
 }
 

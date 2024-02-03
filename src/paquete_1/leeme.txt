@@ -1,0 +1,10 @@
+Hay varias cosas que no he sabido implementar o enfocar como se pide en la práctica
+Uno de los puntos que no he comprendido la dinámica de funcionamiento es: 
+
+	- Clase: "Pedido"
+		* Estado: Representa el estado en el que se encuentra el pedido. 
+		  Los estados y el orden por los que pasa un pedido son: 
+		  PAGADO, PREPARANDO, LISTO, SERVIDO. 
+		  No se puede empezar a preparar un predido si no está pagado, y para que esté 
+		  pagado debe haberse generado un código de pago.
+		  

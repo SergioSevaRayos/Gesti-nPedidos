@@ -3,7 +3,6 @@ package paquete_1;
 
 //Librerías
 import java.util.*;
-//import java.util.InputMismatchException;
 import java.text.DecimalFormat;
 import java.util.Random;
 
@@ -184,6 +183,7 @@ public class PasarelaDePago {
 			System.out.println(Pedido.listaPedido.getCliente() + " | " + Cliente.cliente3.getHistorial());
 		}
 	}
+	
 	public static String generarCodigoPago() {
 
 		if (random == null) {
@@ -200,8 +200,6 @@ public class PasarelaDePago {
 
 		return codigoPago;
 	}
-//	public static void main(String[] args) {
-//
-//	}
+
 
 }
